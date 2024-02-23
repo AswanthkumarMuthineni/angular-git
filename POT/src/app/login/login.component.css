@@ -22,7 +22,7 @@
     margin: 100px auto; 
 }
 /* Full-width input fields */
-input[type=text], input[type=password] {
+input[type=email], input[type=password] {
     width: 100%;
     padding: 12px 20px;
     margin: 8px 0;
@@ -55,3 +55,11 @@ input[type=text], input[type=password] {
   .texttype{
     margin-left: 150px;
   }
+
+  input.ng-touched.ng-invalid{
+    border: 2px solid red;
+}
+
+input.ng-touched.ng-valid{
+    border: 2px solid green;
+}

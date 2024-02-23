@@ -1,4 +1,4 @@
-<div class="alert alert-danger" *ngIf="check">
+<!-- <div class="alert alert-danger" *ngIf="check">
     <strong>{{msg }}</strong>
 
 </div>
@@ -17,8 +17,48 @@
             <input type="password" placeholder="Enter Password" required #password>
 
             <button type="submit" (click)="OnLoginClicked()">Login</button>
-            <p><a routerLink="admin" style="color: #393f81; " class="adminNavigtionLink"><i>Want to login as Admin
-                        ?</i></a></p>
+            <p><a routerLink="admin" style="color: #393f81; " class="adminNavigtionLink"><i>Want to login as Admin?</i></a></p>
         </div>
     </div>
+</div>  -->
+
+       
+
+ 
+
+<div class="alert alert-danger" *ngIf="check">
+    <strong>{{msg}}</strong>
 </div>
+
+<div class="login-form-container">
+    <div class="login-form">
+        <div class="cancel-button-div" (click)="close()">
+            <i class="fa fa-times" aria-hidden="true"></i>
+        </div>
+        <h2><i class="texttype">Employee Here</i></h2>
+        <div class="container">
+            <form #loginForm="ngForm">
+                <label for="uname"><b>Email</b></label>
+                <input type="email" placeholder="Enter Email" required  [(ngModel)]="email" name="email">
+                <div *ngIf="loginForm.invalid" style="color: red; margin-top: 10px;">
+                    Please enter valid Email.
+                </div>
+
+                <label for="psw"><b>Password</b></label>
+                <input type="password" placeholder="Enter Password" required [(ngModel)]="password" minlength="8" name="password">
+                <div *ngIf="loginForm.invalid" style="color: red; margin-top: 10px;">
+                    Please enter password.
+                </div>
+
+
+                
+
+                <button type="submit" (click)="OnLoginClicked()" [disabled]="!loginForm.valid">Login</button>
+            </form>
+
+            
+
+            <p><a routerLink="admin" style="color: #393f81; " class="adminNavigtionLink"><i>Want to login as Admin?</i></a></p>
+        </div>
+    </div>
+</div>   

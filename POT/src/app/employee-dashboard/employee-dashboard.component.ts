@@ -18,10 +18,7 @@ export class EmployeeDashboardComponent {
 
  constructor(private service: AttendanceManipulationService,private route:Router) { }
 
-//  ngDoCheck()
-//  {
-//   this.getAllAttendanceOfEmployeee();
-//  }
+
 
   responseBack: any = "";
   back: boolean = false;
@@ -171,7 +168,7 @@ export class EmployeeDashboardComponent {
 
   onLogoutBtnClicked()
   {
-    sessionStorage.removeItem('loginDetails');
+    sessionStorage.removeItem('employeeLogin');
     this.route.navigate(['/home']);
   }
 

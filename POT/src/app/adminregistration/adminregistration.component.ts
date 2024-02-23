@@ -14,6 +14,8 @@ export class AdminregistrationComponent {
   contractorForm: FormGroup;
   router: Router = inject(Router);
 
+  
+
   constructor(private fb: FormBuilder, private http: HttpClient, private adminreg: RegService) {
     this.contractorForm = this.fb.group({
       contractorName: ['', Validators.required],

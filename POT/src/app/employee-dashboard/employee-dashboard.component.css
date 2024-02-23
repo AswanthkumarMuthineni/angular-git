@@ -1,0 +1,210 @@
+.con
+{
+    width: 100%;
+    height: 100vh;
+    border: 5px solid rgb(27, 27, 81);
+    background-color:rgb(238, 238, 255) ;
+}
+
+.logoutBtn
+{
+    color:aliceblue;
+    font-style: normal;
+    font-size: 18px;
+    margin-right: 80px;
+    background-color: rgb(27, 27, 81);
+    border: none;
+}
+
+.navBar
+{
+    display: flex;
+    width: 100%;
+    height: 10vh;
+    background-color: rgb(27, 27, 81);
+    color: azure;
+    padding: 10px;
+    font-style: oblique;
+    font-size: 30px;
+    justify-content: space-between;
+}
+
+.sec1
+{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.checkIn-checkout
+{
+    width: 400px;
+    height: 250px;
+    border: 3px solid ;
+    margin-top: 10px;
+    border-radius: 3px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color:  rgb(207, 207, 242); 
+}
+
+.empDetails
+{
+    width: 200px;
+    height:250px;
+    border: 3px solid rgb(27, 27, 81);
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.checkIn-checkout-btn
+{
+    width: 90px;
+    padding:5px 0px;
+    border:none;
+    border-radius: 20px;
+    font-size: 18px;
+    color: aliceblue;
+
+}
+
+.green
+{
+    background-color: rgb(2, 89, 2);
+}
+
+.red
+{
+    background-color: red;
+}
+
+.time
+{
+    height: 5vh;
+    width: 150px;
+    border: 2px solid  rgb(27, 27, 81);
+    border-radius: 5px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+    background-color: rgb(27, 27, 81);
+    color: aliceblue;
+}
+
+.dateDisplay
+{
+    font-size: 16px;
+    margin-bottom: 10px;
+    font-family: 'Courier New', Courier, monospace;
+    color: rgb(102, 102, 105);
+}
+
+.Attendance
+{
+    width: 80%;
+    margin:0px 150px;
+}
+
+
+.empDetails
+{
+    text-align: center;
+}
+
+#EmpIcon
+{
+  width: 120px;
+  margin: 10px 0px;
+}
+
+#empId,#empName
+{
+    font-size: 20px;
+    line-height: 20px;
+}
+
+
+.employeeDetailsForm
+{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgb(0,0,0,0.5);
+    z-index: 100;
+}
+
+.emp
+{
+    width: 500px;
+    height: 450px;
+    background-color: aliceblue;
+    border: 3px solid rgb(27, 27, 81) ;
+    padding-top: 40px;
+}
+
+.empcontent
+{
+    padding: 15px 40px 0px 50px;
+}
+
+#cancelIcon
+{
+    position: absolute;
+    right: 550px;
+    top: 160px;
+}
+
+.PersonalDetails
+{
+    display: flex;
+    margin: 10px;
+}
+
+.emp p
+{
+ margin : 0px 30px;
+}
+
+.contactInfo
+{
+    display: flex;
+    flex-direction: column;
+    margin: 10px;
+}
+
+.addressInfo
+{
+    display: flex;
+    /* flex-direction: column; */
+    margin: 10px;
+}
+
+.Attendance-sec1
+{
+    display: flex;
+    justify-content: space-between;
+    margin-top: 40px;
+}
+.empDetailsBtn
+{
+    border: none;
+    font-style: italic;
+    color: rgb(2, 128, 151);
+    background-color:rgb(238, 238, 255);
+}
+
+.monthlyBtn
+{
+    padding: 5px;
+}
+
+
+

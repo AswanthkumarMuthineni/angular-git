@@ -1,0 +1,91 @@
+<div class="con">
+    <div class="navBar">
+        <div>Employee DashBoard</div>
+        <button (click)="onLogoutBtnClicked()" class="logoutBtn">Logout</button>
+    </div>
+
+    <div class="sec1">
+        <div class="checkIn-checkout">
+            <div class="alert alert-success" *ngIf="back">
+                <strong>{{responseBack}}</strong>
+            </div>
+            <!-- <div *ngIf="displayTime">{{displayTime}}</div> -->
+            
+            <div class="time">
+                {{formatTime()}}
+            </div>
+            <div class="dateDisplay"><b>{{DiplayPresentDate}}</b></div>
+            <button (click)="onInOutClicked()" [ngClass]="{'green':check==='checkIn','red':check==='checkOut'}" class="checkIn-checkout-btn">{{check}}</button>
+        </div>
+        <div class="empDetails">
+            <img id="EmpIcon" src="assets/ProfilePic.png">
+            <p id="empId">Id : {{employeeDetails.empid}}</p>
+            <p id="empName">Name : {{employeeDetails.empName}}</p>
+            <button class="empDetailsBtn" (click)="getEmployeeDetails()">Employee Details&nbsp;<i class="fa-solid fa-angle-down"></i></button>  
+        </div>
+    </div>
+
+    <div class="Attendance">
+        <!-- <button (click)="getAllAttendanceOfEmployeee()">getallAttendence</button> -->
+        <div class="Attendance-sec1">
+            <p><i><b>Last 7 days Data</b></i></p>
+            <button class="btn btn-primary" (click)="monthlyAttendance()">GetMontlyData</button>
+        </div>
+       
+        <table class="table mt-3 ">
+            <thead class="text-center table-danger">
+                <tr>
+                    <th>Date</th>
+                    <th>CheckIn Time</th>
+                    <th>CheckOut Time</th>
+                    <th>Attendance status</th>
+                    <th>Total Duration</th>
+                </tr>
+            </thead>
+            <tbody class="text-center table-primary">
+                <tr *ngFor="let attendance of allAttendanceOfEmployee">
+                    <td>{{attendance.date}}</td>
+                    <td>{{attendance.checkInTime}}</td>
+                    <td>{{attendance.checkOutTime}}</td>
+                    <td>{{attendance.attendanceStatus}}</td>
+                    <td>{{attendance.duration}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+
+
+<div class="employeeDetailsForm" *ngIf="showEmpDetails">
+    <div class="emp">
+        <i (click)="showEmpDetails = false" id="cancelIcon" class="fa-solid fa-x"></i>
+        <h2 class="text-center">Employee Details</h2>
+        <div class="empcontent">
+            <h5><b>Personal Info :</b></h5>
+            <div class="PersonalDetails">
+                <p><b>Employee Id : {{employeeDetails.empid}}</b></p>
+                <p>Name : {{employeeDetails.empName}}</p>
+            </div>
+            <h5><b>Contact Info :</b></h5>
+            <div class="contactInfo">
+                <p>Mobile Number : {{employeeDetails.mobileNum}}</p>
+                <p>Email : {{employeeDetails.email}}</p>
+            </div>
+            <h5><b>Address Info :</b></h5>
+            <div class="addressInfo">
+                <div>
+                    <p>Street : {{employeeDetails.street}}</p>
+                    <p>city : {{employeeDetails.city}}</p>
+                </div>
+                <div>
+                    <p>State : {{employeeDetails.state}}</p>
+                    <p>PinCode : {{employeeDetails.pinCode}}</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+

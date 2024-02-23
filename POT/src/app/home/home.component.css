@@ -1,0 +1,59 @@
+.maindiv
+{
+    height: 100vh;
+    width: 100%;
+    background: url("src/assets/homePageBGImg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.nav-bar
+{
+    height: 50px;
+    width: 90%;
+    background-color: rgb(30, 68, 104);
+    display: flex;
+    position: relative;
+    justify-content: space-around;
+    align-items: center;
+    top:30px;
+    margin-left: 70px;
+    border-radius: 5px;
+}
+
+.nav-bar a{
+    text-decoration: none;
+    color: azure;
+}
+
+.logo
+{
+    position: absolute;
+    left:100px;
+    font-family: papyrus;
+    color: aliceblue;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.login
+{
+    position: absolute;
+    right:200px;
+}
+
+.register
+{
+    position: absolute;
+    right: 100px;
+}
+
+.about
+{
+    width: 800px;
+    height: 400px;
+    color: rgb(147, 150, 152);
+    position: absolute;
+    top:40%;
+    left:40%;
+}

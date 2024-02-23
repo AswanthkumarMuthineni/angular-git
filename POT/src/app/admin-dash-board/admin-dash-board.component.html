@@ -1,0 +1,132 @@
+
+<div class="con">
+    <div class="navBar">
+        <div>Admin DashBoard</div>
+        <button (click)="onLogoutBtnClicked()" class="logoutBtn">Logout</button>
+    </div>
+   
+<div class="alert alert-danger" *ngIf="deleteStatus">
+    <strong>{{deleteMsg |json}}</strong>
+</div>
+    <div class="section-2">
+        <div class="section-3">
+            <div class="AddEmpBtn"><button (click)="OnAddEmployeeBtnClicked()"
+                    class="btn btn-success">AddEmployee</button></div>
+            <div class="tableCon">
+                <table class="table mt-1 table-hover">
+                    <thead class="table-danger">
+                        <tr>
+                            <th>Employee Code</th>
+                            <th>Employee Name</th>
+                            <th>Contact Number</th>
+                            <th>Email</th>
+                            <th></th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody class="table-primary">
+                        <tr *ngFor="let employee of AllEmployess">
+                            <td>{{employee.employeeCode}}</td>
+                            <td>{{employee.employeeName}}</td>
+                            <td>{{employee.contact.mobileNumber}}</td>
+                            <td>{{employee.contact.emailId}}</td>
+                            <td><i (click)="onEditClick(employee.employeeCode)" class="fa-solid fa-pencil"></i></td>
+                            <td><i (click)="DeleteEmployee(employee)" class="fa-solid fa-trash"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="ContracterDetails">
+            <img id="EmpIcon" src="assets/ProfilePic.png">
+            <p id="empId">Id : </p>
+            <p id="empName">Name : </p>
+            <button class="empDetailsBtn" (click)="getContracterDetails()">Employee Details&nbsp;<i
+                    class="fa-solid fa-angle-down"></i></button>
+        </div>
+    </div>
+</div>
+
+
+<div class="container1" *ngIf="showEmpForm" (submit)="SaveEmployee()">
+
+    <div class="addEmpForm">
+        <i (click)="onEmpFromCancelBtnClicked()" class="fa-regular fa-circle-xmark addEmpFormCancelBtn"></i>
+
+        <form [formGroup]="addEmployeeForm">
+
+            <div class="row">
+                <h3 class="mt-2 mb-2 text-primary"><b>{{formTitle}}</b></h3>
+                <div class="col-5 ml-3">
+                    <label for="name">Employee Name</label>
+                    <input type="text" class="form-control" formControlName="employeeName" id="name" />
+                </div>
+                <div class="col-5 ml-3" *ngIf="upadeForm">
+                    <label for="">Employee Code</label>
+                    <input type="text" class="form-control" [value]="tempEmpId" [readOnly]="upadeForm" />
+
+                </div>
+            </div>
+            <div class="row " formGroupName="contactReq">
+                <p class="mt-3"><b>Contact Details</b></p>
+                <div class="col-5 ml-3">
+                    <label for="email">Email Id</label>
+                    <input type="text" class="form-control" formControlName="emailId" id="email"
+                        [readOnly]="upadeForm" />
+                </div>
+                <!-- <div class="col-5 ml-3" *ngIf="upadteForm">
+                    <label for="email">Email Id</label>
+                    <input type="text" class="form-control" formControlName="emailId" id="email" />
+                </div> -->
+                <div class="col-5  ml-3">
+                    <label for="phNumber">Mobile Number</label>
+                    <input type="text" class="form-control" formControlName="mobileNumber" id="phNumber" />
+                </div>
+            </div>
+            <div class="row" formGroupName="addressReq">
+                <p class="mt-3"><b>Address Info</b></p>
+                <div class="col-5 ml-3">
+                    <label for="email">Street</label>
+                    <input type="text" class="form-control" formControlName="street" id="email" />
+                </div>
+                <div class="col-5  ml-3">
+                    <label for="city">City</label>
+                    <input type="text" class="form-control" formControlName="city" id="city" />
+                </div>
+            </div>
+            <div class="row" formGroupName="addressReq">
+                <div class="col-5 ml-3">
+                    <label for="state">State</label>
+                    <input type="text" class="form-control" formControlName="state" id="state" />
+                </div>
+                <div class="col-5  ml-3">
+                    <label for="pincode">Pin Code</label>
+                    <input type="text" class="form-control" formControlName="zipcode" id="pincode" />
+                </div>
+            </div>
+
+            <div class="row" *ngIf="showpassword">
+                <div class="col-5">
+                    <label for="empPassword"><b>Employee Password</b></label>
+                    <input type="text" class="form-control" formControlName="password" id="empPassword" />
+                </div>
+            </div>
+
+            <div class="row" formGroupName="loginReq" hidden>
+                <p class="mt-3"><b>Admin/Contracter Details</b></p>
+                <div class="col-5 ml-3">
+                    <label for="adminEmail">Email Id</label>
+                    <input type="text" class="form-control" formControlName="emailId" id="adminEmail" />
+                </div>
+                <div class="col-5 ml-3">
+                    <label for="adminPassword">Email Id</label>
+                    <input type="text" class="form-control" formControlName="password" id="adminPassword" />
+                </div>
+            </div>
+
+
+            <button type="submit" class="btn btn-primary mt-3 addEmpFormSubmitBtn">Save Employee</button>
+
+        </form>
+    </div>
+</div>

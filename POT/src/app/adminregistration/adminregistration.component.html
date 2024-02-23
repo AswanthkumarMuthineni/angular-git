@@ -1,0 +1,100 @@
+
+
+<div>
+    <h2>Contractor Form</h2>
+  
+    <form [formGroup]="contractorForm" (ngSubmit)="onSubmit()">
+     
+      <div>
+        <label for="contractorName">Contractor Name:</label>
+        <input type="text" id="contractorName" formControlName="contractorName" />
+        <div *ngIf="contractorForm.get('contractorName').hasError('required') && contractorForm.get('contractorName').touched">
+          Contractor Name is required.
+        </div>
+      </div>
+  
+     
+      <div>
+        <label for="birthDate">Birth Date:</label>
+        <input type="date" id="birthDate" formControlName="birthDate" />
+        <div *ngIf="contractorForm.get('birthDate').hasError('required') && contractorForm.get('birthDate').touched">
+          Birth Date is required.
+        </div>
+      </div>
+  
+      <div formGroupName="contactReq">
+       
+        <div>
+          <label for="emailId">Email:</label>
+          <input type="email" id="emailId" formControlName="emailId" />
+          <div *ngIf="contractorForm.get('contactReq.emailId').hasError('required') && contractorForm.get('contactReq.emailId').touched">
+            Email is required.
+          </div>
+          <div *ngIf="contractorForm.get('contactReq.emailId').hasError('email') && contractorForm.get('contactReq.emailId').touched">
+            Please enter a valid email address.
+          </div>
+        </div>
+  
+        
+        <div>
+          <label for="mobileNumber">Mobile Number:</label>
+          <input type="number" id="mobileNumber" formControlName="mobileNumber" />
+          <div *ngIf="contractorForm.get('contactReq.mobileNumber').hasError('required') && contractorForm.get('contactReq.mobileNumber').touched">
+            Mobile Number is required.
+          </div>
+        </div>
+      </div>
+  
+      
+      <div formGroupName="addressReq">
+        
+        <div>
+          <label for="street">Street:</label>
+          <input type="text" id="street" formControlName="street" />
+          <div *ngIf="contractorForm.get('addressReq.street').hasError('required') && contractorForm.get('addressReq.street').touched">
+            Street is required.
+          </div>
+        </div>
+  
+        
+        <div>
+          <label for="city">City:</label>
+          <input type="text" id="city" formControlName="city" />
+          <div *ngIf="contractorForm.get('addressReq.city').hasError('required') && contractorForm.get('addressReq.city').touched">
+            City is required.
+          </div>
+        </div>
+  
+       
+        <div>
+          <label for="state">State:</label>
+          <input type="text" id="state" formControlName="state" />
+          <div *ngIf="contractorForm.get('addressReq.state').hasError('required') && contractorForm.get('addressReq.state').touched">
+            State is required.
+          </div>
+        </div>
+  
+        
+        <div>
+          <label for="zipcode">pincode:</label>
+          <input type="number" id="zipcode" formControlName="zipcode" />
+          <div *ngIf="contractorForm.get('addressReq.zipcode').hasError('required') && contractorForm.get('addressReq.zipcode').touched">
+            pincode is required.
+          </div>
+        </div>
+      </div>
+  
+      
+      <div>
+        <label for="password">Password:</label>
+        <input type="password" id="password" formControlName="password" />
+        <div *ngIf="contractorForm.get('password').hasError('required') && contractorForm.get('password').touched">
+          Password is required.
+        </div>
+      </div>
+  
+      
+      <button type="submit">Submit</button>
+    </form>
+  </div>
+  

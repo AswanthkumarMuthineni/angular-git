@@ -1,0 +1,36 @@
+<div class="container">
+    <div class="section-1">
+        <h2>Employee Monthly Attendance</h2>
+        <button (click)="OnDateRangeClick()" class="btn btn-primary">Choose Date Range</button>
+    </div>
+    <table class="table table-primary table-hover">
+        <thead class="text-center">
+            <tr>
+                <th>Date</th>
+                <th>CheckIn Time</th>
+                <th>CheckOut Time</th>
+                <th>Attendance status</th>
+                <th>Total Duration</th>
+            </tr>
+        </thead>
+        <tbody class="text-center">
+            <tr *ngFor="let attendance of monthlyAttendance">
+                <td>{{attendance.date}}</td>
+                <td>{{attendance.checkInTime}}</td>
+                <td>{{attendance.checkOutTime}}</td>
+                <td>{{attendance.attendanceStatus}}</td>
+                <td>{{attendance.duration}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div class="dateContainer" *ngIf="showDateRangeForm">
+    <i (click)="OnCancelIconClick()" class="fa-regular fa-circle-xmark dateRangeCancelIcon"></i>
+    <div class="datePicker">
+        <p><b>Choose Date Range</b></p>
+        <b>StartDate: </b><input [(ngModel)]="StartDate" type="date"/>
+        <b>EndDate: </b><input [(ngModel)]="EndDate" type="date" />
+        <button (click)="OnDateFormSubmit()" class="btn dateformSubmitBtn btn-primary">Submit</button>
+    </div>
+</div>
